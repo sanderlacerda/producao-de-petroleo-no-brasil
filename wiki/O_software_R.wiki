@@ -2,6 +2,8 @@ Com baixar, instalar e aprender a usar o R
 
 = Introdução =
 
+WIKI EM CONSTRUÇÃO !
+
 = Baixando o software =
 
 O endereço para baixar o software é o seguinte:
