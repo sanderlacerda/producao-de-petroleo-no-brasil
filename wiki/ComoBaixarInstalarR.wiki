@@ -1,0 +1,17 @@
+Como baixar e instalar o R
+
+= Introduction =
+
+O endereço para baixar o software é o seguinte: 
+
+http://www.vps.fmvz.usp.br/CRAN/ 
+
+Os detalhes da instalação. 
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
