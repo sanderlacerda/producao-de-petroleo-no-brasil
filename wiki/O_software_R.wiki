@@ -2,9 +2,15 @@ Com baixar, instalar e aprender a usar o R
 
 = Introdução =
 
+= Baixando o software =
+
 O endereço para baixar o software é o seguinte:
 
 http://www.vps.fmvz.usp.br/CRAN/ 
+
+= Veja se funciona =
+
+Uma vez baixado e instalado o software, faça uma tentativa de executar o algoritmo apresentado na seção "downloads" sob o nome "simulação da produção de petróleo.r"
 
 = Aprendendo a linguagem = 
 
