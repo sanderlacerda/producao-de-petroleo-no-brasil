@@ -1,12 +1,15 @@
 Com baixar, instalar e aprender a usar o R
 
-= Introduction =
+= Introdução =
 
-O endereço para baixar o software: 
+O endereço para baixar o software é o seguinte:
+
 http://www.vps.fmvz.usp.br/CRAN/ 
+
 Os detalhes da instalação. 
 
-Aprendendo a linguagem
+= Aprendendo a linguagem = 
+
 Alguns elementos para a leitura do algoritmo: 
 - o símbolo <- equivale a =
 Os loops. faça tal coisa até que...
@@ -27,7 +30,9 @@ sum()
 cumsum()
 max(), min()
 As seguintes fontes apresentam maiores informações sobre a linguagem:
+
 O livro R: a Language and Environment for Statistical Computing, em formato eletrônico, é encontrado em: http://cran.r-project.org/doc/manuals/refman.pdf
+
 O livro An introduction to R, também em format eletrônico, é encontrado em http://cran.r-project.org/doc/manuals/R-intro.pdf
 
 
