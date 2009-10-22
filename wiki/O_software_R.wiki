@@ -6,35 +6,27 @@ O endereço para baixar o software é o seguinte:
 
 http://www.vps.fmvz.usp.br/CRAN/ 
 
-Os detalhes da instalação. 
-
 = Aprendendo a linguagem = 
 
 Alguns elementos para a leitura do algoritmo: 
-- o símbolo <- equivale a =
-Os loops. faça tal coisa até que...
-A inicialização da variável “anos”.
-Para i variando entre 1 e 10 (ou seja, a variável i assumirá, a cada iteração do loop, os valores 1, 2, ..., 10), os correspondentes valores da variável anos serão 2010, 2011,...,2020
+
+i) o símbolo "<-" equivale a "="
+
+ii) A inicialização da variável “anos”: para i variando entre 1 e 10 (ou seja, a variável i assumirá, a cada iteração do loop, os valores 1, 2, ..., 10), os correspondentes valores da variável anos serão 2010, 2011,...,2020
+
 ano_inicial <- 2010
 anos  <-  c()
-for (i in 1:10) { 
-	anos <- ano_inicial+i
-}
+for (i in 1:10) {anos <- ano_inicial+i}
 
-Algumas funções:
-dim
-write.table(mdspl,file=”c:/simulacao/mdspl.txt”)
-if(jhoriz_plat<20) prazo <- horiz_plat else prazo=20
-seq(0,0,length.out=horizonte*dsplrows)
-sum()
-cumsum()
-max(), min()
+= Referências =
+
 As seguintes fontes apresentam maiores informações sobre a linguagem:
 
-O livro R: a Language and Environment for Statistical Computing, em formato eletrônico, é encontrado em: http://cran.r-project.org/doc/manuals/refman.pdf
+Os seguinte livros, em formato eletrônico, estão disponíveis on-line:
 
-O livro An introduction to R, também em format eletrônico, é encontrado em http://cran.r-project.org/doc/manuals/R-intro.pdf
+R: a Language and Environment for Statistical Computing <http://cran.r-project.org/doc/manuals/refman.pdf>
 
+An introduction to R <http://cran.r-project.org/doc/manuals/R-intro.pdf>
 
 = Details =
 
