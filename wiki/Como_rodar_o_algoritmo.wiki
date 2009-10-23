@@ -1,13 +1,7 @@
 Inicio rápido: como rodar o algoritmo
 
-= Introduction =
+= Criando o diretório "c:/simulacao" =
 
-Add your content here.
+O algoritmo vai buscar dados de entrada no diretório "c:/simulacao/input" e vai gravar resultados numéricos e gráficos no diretório "c:/simulacao/". A menos que você mude essas configurações, será necessário criar essas pastas em seu computador. 
 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Uma vez criada a pasta "c:/simulacao/input", guarde nela os arquivos de dados que você baixa da seção "downloads". 
