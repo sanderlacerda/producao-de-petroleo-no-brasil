@@ -10,7 +10,7 @@ http://www.vps.fmvz.usp.br/CRAN/
 
 = Aprendendo a linguagem = 
 
-A seguir são apresentados alguns elementos básicos do R e algumas referências de leitura.  
+A seguir são apresentados alguns elementos básicos do R e algumas referências de leitura. 
 
 = Um loop = 
 
@@ -47,6 +47,26 @@ anos  <-  c()
 for (i in 0:10) {anos <- ano_inicial+i}
 
 entenda "a variável _anos_ assume os valores 2010, 2011,...,2021 e esses valores encontram-se armazenados sob o nome _anos_". 
+
+= Algumas funções =
+
+i) read.table
+
+Ao ler:
+
+parametro <- read.table(file="c:/caminho do arquivo/nome do arquivo.txt")
+
+entenda: "a variável _parâmetro_ é igual ao conteúdo do arquivo "c:/caminho do arquivo/nome do arquivo.txt"
+
+ii) write.table
+
+Ao ler:
+
+write.table(ano,file="c:/caminho do arquivo/nome do arquivo.txt")
+
+entenda: o conteúdo da variável _ano_ é gravada no arquivo "nome do arquivo.txt", localizado em "c:/caminho do arquivo/"
+
+
 
 
 = Referências =
