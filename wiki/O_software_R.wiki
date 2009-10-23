@@ -41,7 +41,9 @@ entenda "quando a variável _i_ assumir sucessivamente valores entre 1 e 10, a v
 iv) Ao ler: 
 
 ano_inicial <- 2010
+
 anos  <-  c()
+
 for (i in 0:10) {anos <- ano_inicial+i}
 
 entenda "a variável _anos_ assume os valores 2010, 2011,...,2021 e esses valores encontram-se armazenados sob o nome _anos_". 
