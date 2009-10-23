@@ -12,6 +12,8 @@ http://www.vps.fmvz.usp.br/CRAN/
 
 A seguir são apresentados alguns elementos básicos do R e algumas referências de leitura.  
 
+= Um loop = 
+
 i) o símbolo "<-" equivale a "=". 
 
 Ao ler:
