@@ -1,6 +1,4 @@
-Com baixar, instalar e aprender a usar o R
-
-= Introdução =
+Como baixar, instalar e aprender a usar o R
 
 WIKI EM CONSTRUÇÃO !
 
@@ -10,21 +8,42 @@ O endereço para baixar o software é o seguinte:
 
 http://www.vps.fmvz.usp.br/CRAN/ 
 
-= Veja se funciona =
-
-Uma vez baixado e instalado o software, faça uma tentativa de executar o algoritmo apresentado na seção "downloads" sob o nome "simulação da produção de petróleo.r"
-
 = Aprendendo a linguagem = 
 
-Alguns elementos para a leitura do algoritmo: 
+A seguir são apresentados alguns elementos básicos do R e algumas referências de leitura.  
 
-i) o símbolo "<-" equivale a "="
+i) o símbolo "<-" equivale a "=". 
 
-ii) A inicialização da variável “anos”: para i variando entre 1 e 10 (ou seja, a variável i assumirá, a cada iteração do loop, os valores 1, 2, ..., 10), os correspondentes valores da variável anos serão 2010, 2011,...,2020
+Ao ler:
+
+ano_inicial <- 2010
+
+entenda "a variável _ano_inicial_ é igual a _2010_"
+
+ii) o símbolo "c()" significa "concatenar" e, quando os parênteses estão vazios, significa que a variável está sendo inicializada.
+
+Ao ler:
+
+anos <- c()
+
+entenda "a variável _anos_ está sendo inicializada mas nenhum valor foi ainda atribuído a ela". 
+
+iii) vejamos agora como funciona um _loop_:
+
+Ao ler:
+
+for (i in 0:10) {anos <- ano_inicial+i}
+
+entenda "quando a variável _i_ assumir sucessivamente valores entre 1 e 10, a variável _anos_ assumirá valores iguais a _ano_inicial_ (ou seja, 2010) mais _i_". Os valores da variável _anos_ serão, portanto, 2010, 2011,...,2021. 
+
+iv) Ao ler: 
 
 ano_inicial <- 2010
 anos  <-  c()
-for (i in 1:10) {anos <- ano_inicial+i}
+for (i in 0:10) {anos <- ano_inicial+i}
+
+entenda "a variável _anos_ assume os valores 2010, 2011,...,2021 e esses valores encontram-se armazenados sob o nome _anos_". 
+
 
 = Referências =
 
@@ -35,10 +54,3 @@ Os seguinte livros, em formato eletrônico, estão disponíveis on-line:
 R: a Language and Environment for Statistical Computing <http://cran.r-project.org/doc/manuals/refman.pdf>
 
 An introduction to R <http://cran.r-project.org/doc/manuals/R-intro.pdf>
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
