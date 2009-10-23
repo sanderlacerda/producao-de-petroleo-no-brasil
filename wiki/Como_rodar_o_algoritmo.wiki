@@ -1,7 +1,24 @@
 Inicio rápido: como rodar o algoritmo
 
-= Criando o diretório "c:/simulacao" =
+= Criando e populando o diretório "c:/simulacao" =
 
 O algoritmo vai buscar dados de entrada no diretório "c:/simulacao/input" e vai gravar resultados numéricos e gráficos no diretório "c:/simulacao/". A menos que você mude essas configurações, será necessário criar essas pastas em seu computador. 
 
-Uma vez criada a pasta "c:/simulacao/input", guarde nela os arquivos de dados que você baixa da seção "downloads". 
+Uma vez criada a pasta "c:/simulacao/input", guarde nela os seguintes arquivos de dados que você baixa da seção "downloads":
+
+i) pet_cons_m3.txt
+ii) pet_prod_m3.txt
+iii) pib_real.txt
+
+Na pasta "c:/simulacao", guarde os seguintes arquivos (também disponíveis para baixar na seção "downloads"):
+
+i) simulação da produção de petróleo.r
+ii) reservas economicamente recuperaveis.r
+iii) TIR e VPL.r
+iv) grafico arrecadacao.r
+v) grafico capex e opex
+vi) grafico variaveis ??????????????????????????
+
+Pronto. Agora você pode rodar o algoritmo. 
+
+
