@@ -2,9 +2,7 @@ Inicio rápido: como rodar o algoritmo
 
 = Criando e populando o diretório "c:/simulacao" =
 
-O algoritmo vai buscar dados de entrada no diretório "c:/simulacao/input" e vai gravar resultados numéricos e gráficos no diretório "c:/simulacao/". A menos que você mude essas configurações, será necessário criar essas pastas em seu computador. 
-
-Uma vez criada a pasta "c:/simulacao/input", guarde nela os seguintes arquivos de dados que você baixa da seção "downloads":
+O algoritmo vai buscar dados de entrada no diretório "c:/simulacao/input" e vai gravar resultados numéricos e gráficos no diretório "c:/simulacao/". A menos que você mude essas configurações, será necessário criar essas pastas em seu computador. Criada a pasta "c:/simulacao/input", guarde nela os seguintes arquivos de dados que você baixa da seção "downloads":
 
 i) pet_cons_m3.txt
 
@@ -26,7 +24,7 @@ v) grafico capex e opex
 
 vi) grafico variaveis ??????????????????????????
 
-Pronto. Agora você pode rodar o algoritmo. 
+Agora você tem todos os elementos para rodar o algoritmo principal, "simulação da produção de petróleo.r". 
 
 = Rodando o algoritmo = 
 
@@ -40,3 +38,4 @@ iii) encontre e carregue "c:/simulacao/simulação da produção de petróleo.r"
 
 iv) clique em "Editar" e depois em "Executar tudo"
 
+O algoritmo então calcula, para os dados de entrada utilizados, as trajetórias das variáveis descritas no artigo. Vários gráficos aparecem na tela do R. Para vê-los, vá para "c:/simulacao/". A cada vez que o algoritmo é executado, os gráficos são gravados. Os resultados numéricos são gravados ...
