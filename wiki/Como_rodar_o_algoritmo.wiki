@@ -13,12 +13,15 @@ iii) pib_real.txt
 Na pasta "c:/simulacao", guarde os seguintes arquivos (também disponíveis para baixar na seção "downloads"):
 
 i) simulação da produção de petróleo.r
+
 ii) reservas economicamente recuperaveis.r
+
 iii) TIR e VPL.r
+
 iv) grafico arrecadacao.r
+
 v) grafico capex e opex
+
 vi) grafico variaveis ??????????????????????????
 
 Pronto. Agora você pode rodar o algoritmo. 
-
-
