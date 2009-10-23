@@ -1,0 +1,44 @@
+#summary One-sentence summary of this page.
+
+A produção da plataforma padrão
+A curva de produção da plataforma padrão. O resultado operacional da plataforma padrão: a receita bruta – o produto do preço do petróleo e do volume produzido, menos os tributos que incidem sobre a receita bruta (royalties e gastos obrigatórios em P&D), menos o custo operacional da plataforma. 
+O horizonte econômico da plataforma (“horiz_plat”) é o número de anos em que ela é capaz de operar com resultado operacional positivo. O horizonte do projeto (“horizonte”) é dado pelo numero de anos que leva para a primeira plataforma entrar em operação (quatro anos a partir de 2010), mais o numero de anos em que plataformas são adicionadas à produção (dsplrows), mais o horizonte de produção das plataformas.
+opex_vida_util
+resultado_op_platf
+A projeção do PIB. O PIB em dólares é igual ao valor do PIB em reais convertido à taxa de câmbio real-dólar e projetado segundo uma taxa de crescimento.
+A produção do conjunto das plataformas
+A produção do conjunto de plataformas instaladas em um campo (ou província). A variável “ptempo”: matriz em que cada coluna representa um ano, a produção das plataformas colocadas em operação naquele ano. A soma das linhas de “ptempo” resulta na produção do campo (prodia), em barris por dia. 
+Os custos de desenvolvimento da produção
+Os custos de desenvolvimento da produção: “mdspl” é a matrix com os custos de desenvolvimento. A soma das colunas de “mdspl” resulta no “capex” anual. 
+Os custos operacionais
+Os custos operacionais, “opexmat”. A soma das linhas de “opexmat” resulta nos custos operacionais anuais, “opex”. 
+Depreciação
+A depreciação dos equipamentos
+As compras domésticas e importações
+Os gastos de investimento destinados ao mercado doméstico. 
+A geração de tributos indiretos, royalties e gastos obrigatórios em P&D
+A arrecadação de tributos, participações e os gastos obrigatórios durante a vida do projeto. 
+O fluxo de caixa operacional
+
+O financiamento
+SAC, prazo de carência e prazo de amortização. Durante o período de carência, os juros são cobrados. 
+A participação especial
+O lucro antes dos tributos diretos. O cálculo da participação especial: o vetor com as alíquotas “aliq”,
+O vetor com as alíquotas efetivoas: ”aliqefet”
+Para cada volume de produção (em “prodia”), é verificado o correspondente volume para fins de participação especial e encontrados os valores de “par” e “aliq”, para cada ano da produção. 
+A amortização das despesas dedutíveis
+
+Os tributos diretos, lucro e resultado de exercícios anteriores
+Participação do governo 
+Indicadores financeiros
+A taxa interna de retorno e o valor presente líquido
+A impressão do relatório. 
+A demanda por petróleo
+A série de consumo de petróleo no Brasil, obtida do Balanço Energético Nacional, é convertida de m3 para barris. O cálculo da razão entre o consumo de petróleo, em barris por ano, e o PIB real a preços de 2008. 
+O ajuste de uma curva de mínimos quadrados na relação entre PIB e consumo de petróleo através da função “fit”. A utilização dos coeficientes para a projeção da relação para o horizonte de produção do pré-sal:
+fit$coefficients[[1]]
+A exportação de petróleo
+
+Imprimindo relatório com os parâmetros utilizados e com os resultados obtidos
+
+Os gráficos
