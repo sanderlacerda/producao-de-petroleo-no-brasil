@@ -27,3 +27,16 @@ v) grafico capex e opex
 vi) grafico variaveis ??????????????????????????
 
 Pronto. Agora você pode rodar o algoritmo. 
+
+= Rodando o algoritmo = 
+
+Siga os seguintes passos:
+
+i) abra o R
+
+ii) clique em "Arquivo" e depois em "Abrir script..."
+
+iii) encontre e carregue "c:/simulacao/simulação da produção de petróleo.r"
+
+iv) clique em "Editar" e depois em "Executar tudo"
+
