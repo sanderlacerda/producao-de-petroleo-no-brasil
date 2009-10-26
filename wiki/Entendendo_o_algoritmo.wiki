@@ -1,10 +1,33 @@
 Entendendo e interpretando o algoritmo
 
-As definições de variáveis:
+Os nomes dos parâmetros que são escalares estão explicados no texto do algoritmo. 
 
-“horiz_plat”: horizonte econômico da plataforma, ou seja, o número de anos em que ela é capaz de operar com resultado operacional positivo. 
+Os parâmetros que são matrizes: 
+
+"parametro"
+
+"volum"
+
+"aliquota"
+
+"custos_desenv": vetor com os custos de construção de uma unidade produção durante os quatro anos entre a licitação e o comissionamento. 
+
+custos_desenv = [900.000 
+                 900.000 
+                 900.000  
+                 900.000]
+
+"platf_padrao"
+
+"cenario"
 
 "dsplrows": numero de anos em que plataformas são adicionadas à produção
+
+= As definições de variáveis =
+
+= PRODUÇÃO =
+
+“horiz_plat”: horizonte econômico da plataforma, ou seja, o número de anos em que ela é capaz de operar com resultado operacional positivo. 
 
 “horizonte”: O horizonte do projeto é dado pelo numero de anos que leva para a primeira plataforma entrar em operação (quatro anos a partir de 2010), mais o numero de anos em que plataformas são adicionadas à produção (dsplrows), mais o horizonte de produção das plataformas.
 
