@@ -22,7 +22,7 @@ iv) grafico arrecadacao.r
 
 v) grafico capex e opex
 
-vi) grafico variaveis ??????????????????????????
+vi) grafico producao e exportacao versus pib.r 
 
 Agora você tem todos os elementos para rodar o algoritmo principal, "simulação da produção de petróleo.r". 
 
