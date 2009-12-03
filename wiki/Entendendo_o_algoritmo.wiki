@@ -1,6 +1,13 @@
 Entendendo e interpretando o algoritmo
 
-O algoritmo é dividido em blocos. O primeiro bloco apresenta os parâmetros utilizados nos cálculos, tais como o preço do petróleo, alíquotas de tributos etc. O segundo bloco apresenta a montagem da produção de petróleo, explicada a seguir. 
+O algoritmo principal é dividido nos seguintes blocos:
+
+1 - parâmetros utilizados nos cálculos, tais como o preço do petróleo, alíquotas de tributos etc;
+
+2 - produção de petróleo
+
+3 - custos 
+
 
 = PRODUÇÃO =
 
@@ -16,23 +23,25 @@ A produção da plataforma em cada ano de sua vida ECONÔMICA ("prod_plat") é i
 
 Encontram-se dentro do bloco da produção outros dois componentes do modelo: as datas entre o início e o fim da produção do pré-sal ("anos") e a projeção do PIB ("pib"). O PIB em dólares é igual ao valor do PIB em reais convertido à taxa de câmbio real-dólar. A projeção do PIB é realizada utilizando uma taxa de crescimento ("tx_cs_pib") suposta constante e igual a 3,5% ao ano. 
 
+A produção do conjunto das plataformas colocadas em operação no pré-sal é montada através da expressão “ptempo”, a partir da produção de cada plataforma ("prod_plat") e do número de plataformas que a cada ano entram em operação ("cenario"). Cada coluna de "ptempo" representa a produção da(s) plataforma(s) colocada(s) em operação em um determinado ano. Os anos anteriores à entrada das plataformas em operação, em cada coluna de "ptempo", são preenchidos com zeros ("seq(0,0,length.out=tempo_construcao+i-1)") e, da mesma forma, os anos posteriores ao fim da vida econômica das plataformas são também preenchidos com zeros ("seq(0,0,length.out=dsplrows-i)"). A soma das linhas de “ptempo” resulta na produção do pré-sal ("prodia"), em barris por dia. 
+
+= CUSTOS, DEPRECIAÇÃO e FLUXO DE CAIXA OPERACIONAL = 
+
+A expressão "mdspl" está para os custos de desenvolvimento da produção assim como "ptempo" está para a produção. Ou seja, cada coluna de "mdspl" está associada a um ano e representa a evolução dos custos de desenvolvimento da produção ("custos_desenv") da(s) plataforma(s) encomendada(s) naquele ano. A soma das linhas de "mdspl" resulta no “capex” anual. 
+
+A mesma lógica governa a construção da matriz de custos operacionais ("opexmat”). A soma das linhas de “opexmat” resulta nos custos operacionais anuais (“opex”). 
+
+A expressão "valorcont" representa o valor contábil dos equipamentos utilizados nas unidades de produção para fins de cáculo da depreciação dos equipamentos. Se a vida econômica das unidades de produção for menor do que o prazo legal de 20 anos para a depreciação total dos equipamentos, a variável "prazo" é ajustada. A depreciação é calculada anualmente sobre a porcentagem dos custos de desenvolvimento da produção que é associada a bens tangíveis. 
+
+O capital físico associado às unidades de produção colocadas em operação a cada ano no pré-sal ("capital_fis_m") e a correspondente depreciação do capital físico ("depreciacao_m"), é calculado a partir da evolução do valor contábil das unidades de produção e da quantidade de unidades de produção colocadas em operação a cada ano. A soma das linhas de "capital_fis_m" resulta na evolução anual do capital físico e a soma das linhas de "depreciacao_m" resulta no valor contábil da depreciação anual dos equipamentos de produção. 
+
+Uma vez calculados a produção e os custos, são facilmente obtidos os gastos de investimento no mercado doméstico e as importações de equipamentos, a arrecadação de tributos indiretos incidentes tanto sobre os custos de desenvolvimento da produção quanto sobre os custos operacionais, os royalties e os gastos obrigatórios em pesquisa e desenvolvimento. O fluxo de caixa operacional é calculado, a cada ano, como a diferença entre o valor bruto da produção menos os custos de desenvolvimento da produção, custos operacionais, royalties e gastos obrigatórios em P&D. 
+
+= FINANCIAMENTO, PARTICIPAÇÃO ESPECIAL E AMORTIZAÇÃO DAS DESPESAS DEDUTÍVEIS = 
+
+O cálculo dos tributos indiretos
 
 
-A produção do conjunto das plataformas colocadas em operação no pré-sal é a somatória
-
-A produção do conjunto de plataformas instaladas em um campo (ou província). 
-
-“ptempo”: matriz em que cada coluna representa um ano, a produção das plataformas colocadas em operação naquele ano. A soma das linhas de “ptempo” resulta na produção do campo (prodia), em barris por dia. 
-
-Os custos de desenvolvimento da produção
-
-“mdspl”: é a matrix com os custos de desenvolvimento da produção. A soma das colunas de “mdspl” resulta no “capex” anual. 
-
-“opexmat”: custos operacionais. A soma das linhas de “opexmat” resulta nos custos operacionais anuais, “opex”. 
-
-Depreciação
-
-A depreciação dos equipamentos
 
 As compras domésticas e importações
 
