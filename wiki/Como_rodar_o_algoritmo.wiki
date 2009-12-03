@@ -40,6 +40,7 @@ iv) clique em "Editar" e depois em "Executar tudo"
 
 O algoritmo então calcula, para os dados de entrada utilizados, as trajetórias das variáveis descritas no artigo. Vários gráficos aparecem na tela do R. Para vê-los, vá para "c:/simulacao/". A cada vez que o algoritmo é executado, os gráficos são gravados nesse diretório. 
 Os resultados numéricos também são gravados no diretório "c:/simulacao/". Os seguintes arquivos contém os resultados numéricos:
+
 i) "ptempo.txt" é a matriz com a produção de todas as unidades ao longo do horizonte do pré-sal;
 
 ii) "presal.txt" é a produção anual, expressa em barris por dia, do pré-sal durante o horizonte de produção;
