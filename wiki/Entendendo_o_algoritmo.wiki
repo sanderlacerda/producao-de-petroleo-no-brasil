@@ -1,43 +1,24 @@
 Entendendo e interpretando o algoritmo
 
-Os nomes dos parâmetros que são escalares estão explicados no texto do algoritmo. 
-
-Os parâmetros que são matrizes: 
-
-"parametro"
-
-"volum"
-
-"aliquota"
-
-"custos_desenv": vetor com os custos de construção de uma unidade produção durante os quatro anos entre a licitação e o comissionamento. 
-
-custos_desenv = [900.000 
-                 900.000 
-                 900.000  
-                 900.000]
-
-"platf_padrao"
-
-"cenario"
-
-"dsplrows": numero de anos em que plataformas são adicionadas à produção
-
-= As definições de variáveis =
+O algoritmo é dividido em blocos. O primeiro bloco apresenta os parâmetros utilizados nos cálculos, tais como o preço do petróleo, alíquotas de tributos etc. O segundo bloco apresenta a montagem da produção de petróleo, explicada a seguir. 
 
 = PRODUÇÃO =
 
-“horiz_plat”: horizonte econômico da plataforma, ou seja, o número de anos em que ela é capaz de operar com resultado operacional positivo. 
+O custo operacional de uma plataforma em cada ano ao longo de sua vida útil ("opex_vida_util") é igual ao seu custo operacional anual ("custo_op_anual") acrescido dos tributos indiretos incidentes sobre os custos operacionais ("trib_ind_op"). A expressão "seq(1,1,length.out=vida_util_platf)" significa uma sequência ("seq") de números que começa em "1", termina em "1" (ou seja, "1,1,1,...") e que tem tamanho ("lenth.out") igual ao número de anos da vida útil da plataforma ("vida_util_platf"). 
 
-“horizonte”: O horizonte do projeto é dado pelo numero de anos que leva para a primeira plataforma entrar em operação (quatro anos a partir de 2010), mais o numero de anos em que plataformas são adicionadas à produção (dsplrows), mais o horizonte de produção das plataformas.
+O resultado operacional da plataforma ("resultado_op_platf") é calculado da seguinte maneira. A produção média diária de petróleo da plataforma padrão ("platf_padrão") é multiplicada pelo número de dias do ano, do que resulta a produção anual da plataforma padrão. Essa produção, avaliada ao preço do petróleo utilizado no modelo ("ppet"), resulta na receita bruta. A receita bruta menos os pagamentos de royalties e de gastos obrigatórios em P&D resulta na receita líquida. O resultado operacional é a receita líquida menos o custo operacional da plataforma ("opex_vida_util"). 
 
-"opex_vida_util":
+O horizonte econômico da plataforma (“horiz_plat”) é o número de anos em que ela é capaz de operar com resultado operacional positivo ("resultado_op_platf">0).
+  
+O horizonte do projeto (“horizonte”) é dado pelo numero de anos que leva para a primeira plataforma entrar em operação (quatro anos a partir de 2010), mais o numero de anos em que plataformas são adicionadas à produção ("dsplrows-1"), mais o horizonte de produção das plataformas("horiz_plat").
 
-"resultado_op_platf":
+A produção da plataforma em cada ano de sua vida ECONÔMICA ("prod_plat") é igual à produção da plataforma durante o seu horizonte econômico. Ou seja, se o horizonte econômico da plataforma ("horiz_plat") for menor do que a sua vida útil, a plataforma é retira de operação, ainda que ela possa produzir durante mais algum tempo, pois a produção será muito baixa para gerar resultado operacional positivo. 
 
-A projeção do PIB. O PIB em dólares é igual ao valor do PIB em reais convertido à taxa de câmbio real-dólar e projetado segundo uma taxa de crescimento.
+Encontram-se dentro do bloco da produção outros dois componentes do modelo: as datas entre o início e o fim da produção do pré-sal ("anos") e a projeção do PIB ("pib"). O PIB em dólares é igual ao valor do PIB em reais convertido à taxa de câmbio real-dólar. A projeção do PIB é realizada utilizando uma taxa de crescimento ("tx_cs_pib") suposta constante e igual a 3,5% ao ano. 
 
-A produção do conjunto das plataformas
+
+
+A produção do conjunto das plataformas colocadas em operação no pré-sal é a somatória
 
 A produção do conjunto de plataformas instaladas em um campo (ou província). 
 
