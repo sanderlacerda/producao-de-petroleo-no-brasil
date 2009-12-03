@@ -39,22 +39,14 @@ Uma vez calculados a produção e os custos, são facilmente obtidos os gastos d
 
 = FINANCIAMENTO, PARTICIPAÇÃO ESPECIAL E AMORTIZAÇÃO DAS DESPESAS DEDUTÍVEIS = 
 
-O cálculo dos tributos indiretos
 
 
 
-As compras domésticas e importações
 
-Os gastos de investimento destinados ao mercado doméstico. 
-
-A geração de tributos indiretos, royalties e gastos obrigatórios em P&D
-
-A arrecadação de tributos, participações e os gastos obrigatórios durante a vida do projeto. 
-
-O fluxo de caixa operacional
+A base de incidência da participação especial é o fluxo de caixa operacional menos a depreciação. 
 
 O financiamento
-SAC, prazo de carência e prazo de amortização. Durante o período de carência, os juros são cobrados. 
+prazo de carência e prazo de amortização. Durante o período de carência, os juros são cobrados. 
 
 A participação especial
 
