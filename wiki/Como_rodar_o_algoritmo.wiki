@@ -10,6 +10,8 @@ ii) pet_prod_m3.txt
 
 iii) pib_real.txt
 
+iv) produção das reservas provadas.txt
+
 Na pasta "c:/simulacao", guarde os seguintes arquivos (também disponíveis para baixar na seção "downloads"):
 
 i) simulação da produção de petróleo.r
