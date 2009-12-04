@@ -63,18 +63,9 @@ Se a base de incidência da participação especial é positiva, mas "res_ex_ant
 
 Se a base de incidência da participação especial é positiva e o valor negativo de "res_ex_ant_pe" foi zerado, iniciam-se os pagamentos da participação especial, à alíquota efetiva anteriormente calculada. 
 
-Uma vez determinada a participação especial, calcula-se a base de incidência dos tributos diretos, ou seja, o "lucro antes dos tributos diretos" ("lucro_antes_td"), definido como o fluxo de caixa operacional menos a participação especial, menos despesas financeiras, menos despesas administrativas e menos a depreciação. 
+Uma vez determinada a participação especial, calcula-se a base de incidência dos tributos diretos, ou seja, o "lucro antes dos tributos diretos" ("lucro_antes_td"), definido como o fluxo de caixa operacional menos a participação especial, menos despesas financeiras, menos despesas administrativas e menos a depreciação. Se a base de incidência dos tributos diretos for positiva, eles são calculados utilizando-se as suas respectivas alíquotas. 
 
-
-
-Calculada a participação especial
-
-
-
-
-
-
-A demanda por petróleo
+= DEMANDA POR PETRÓLEO = 
 
 A série de consumo de petróleo no Brasil, obtida do Balanço Energético Nacional, é convertida de m3 para barris. O cálculo da razão entre o consumo de petróleo, em barris por ano, e o PIB real a preços de 2008. 
 
