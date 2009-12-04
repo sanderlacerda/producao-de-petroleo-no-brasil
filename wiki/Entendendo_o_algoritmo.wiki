@@ -37,9 +37,19 @@ O capital físico associado às unidades de produção colocadas em operação a
 
 Uma vez calculados a produção e os custos, são facilmente obtidos os gastos de investimento no mercado doméstico e as importações de equipamentos, a arrecadação de tributos indiretos incidentes tanto sobre os custos de desenvolvimento da produção quanto sobre os custos operacionais, os royalties e os gastos obrigatórios em pesquisa e desenvolvimento. O fluxo de caixa operacional é calculado, a cada ano, como a diferença entre o valor bruto da produção menos os custos de desenvolvimento da produção, custos operacionais, royalties e gastos obrigatórios em P&D. 
 
-= FINANCIAMENTO, PARTICIPAÇÃO ESPECIAL E AMORTIZAÇÃO DAS DESPESAS DEDUTÍVEIS = 
+= FINANCIAMENTO, PARTICIPAÇÃO ESPECIAL E FLUXO DE CAIXA FINANCEIRO = 
 
+O financiamento é montado em três etapas. São estabelecidos, em primeiro lugar, os valores iniciais das variáveis:
 
+i) o desembolso ("desemb[1]") é igual à porcentagem de dívida na composição do capital do projeto vezes o primeiro valor do anual do fluxo de caixa operacional ("fc_op[1]");
+
+ii) o principal ("principal[1]") é igual ao valor do desembolso inicial;
+
+iii) o saldo devedor ("saldo_dev[1]") também é igual ao valor do desembolso inicial.
+
+Na segunda etapa, são calculados os valores dos desembolsos durante o período de carência. Se, durante o período de carência, os preços do petróleo forem altos a ponto de tornar o fluxo de caixa operacional positivo, os desembolsos são interrompidos. Caso contrário, os desembolsos obedecem à regra inicial (a cada ano, os desembolsos são iguais à porcentagem da dívida na composição do capital do projeto vezes o valor do fluxo de caixa operacional).  
+
+Na terceira etapa são calculados, para cada período, os juros incidentes sobre o principal ("taxa_juros_terc*principal[i-1]"), a amortização do principal ("amort_princ[i]") e o valor do principal ("principal[i]"). Essas duas últimas variáveis dependem, naturalmente, do período de carência. As demais variáveis de financiamento resultam dessas primeiras: as prestações devidas pelo tomador do empréstimo ("prest[i]") são a soma de juros mais amortizações, a despesa financeira é igual aos juros e o saldo devedor é igual ao principal. 
 
 
 
