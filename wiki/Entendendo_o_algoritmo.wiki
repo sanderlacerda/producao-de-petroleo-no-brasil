@@ -1,6 +1,6 @@
 Entendendo o algoritmo
 
-São a seguir examinadas as partes mais complexas do algoritmo principal. As variações do algoritmo principal, utilizadas para calcular as reservas economicamente recuperáveis e parâmetros financeiros, são comentadas ao final. 
+São a seguir examinadas as partes mais complexas do algoritmo principal. As variações do algoritmo principal, utilizadas para calcular as reservas economicamente recuperáveis e parâmetros financeiros, são comentadas ao final, assim como os arquivos que geram gráficos. 
 
 = PRODUÇÃO =
 
@@ -79,4 +79,3 @@ Os arquivos "grafico arrecadacao.r", "grafico variaveis % pib.r" e "grafico cape
 A partir de um nível de preços do petróleo adotado no algoritmo principal, é gravado no diretório "c:/simulacao/" o arquivo "arrecadacao.txt", com os dados da arrecadação de tributos e de participações govenamentais para aquele preço do petróleo. Modificando-se o nome desse arquivo para, digamos, "arrecadacao ppet 40.txt", é possível carregar os dados e compará-los com a arrecadação para preços do petróleo em outro nível, através de "grafico arrecadacao.r". 
 
 Os gráficos de capex e opex e de variáveis como porcentagem do PIB são obtidos de maneira similar. 
-
