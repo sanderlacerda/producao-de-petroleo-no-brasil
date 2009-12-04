@@ -1,6 +1,6 @@
 Entendendo o algoritmo
 
-São a seguir examinadas as partes mais complexas do algoritmo principal. 
+São a seguir examinadas as partes mais complexas do algoritmo principal. As variações do algoritmo principal, utilizadas para calcular as reservas economicamente recuperáveis e parâmetros financeiros, são comentadas ao final. 
 
 = PRODUÇÃO =
 
@@ -61,3 +61,22 @@ Uma vez determinada a participação especial, calcula-se a base de incidência 
 = DEMANDA POR PETRÓLEO = 
 
 O ajuste de uma curva de mínimos quadrados na relação entre PIB e consumo de petróleo é realizado através da função “lm”. Os coeficientes estimados são obtidos através das expressões "fit$coeficients", utilizados para traçar as curvas da reta de ajuste e de sua projeção. O cálculo da demanda por petróleo é realizado através do produto da projeção da relação entre PIB e consumo de petróleo e a projeção de crescimento do PIB. 
+
+= RESERVAS ECONOMICAMENTE RECUPERÁVEIS =
+
+O arquivo "reservas economicamente recuperaveis.r" é uma variação do algoritmo principal. Desde o "horizonte de produção de cada unidade" até o cálculo da TIR o arquivo "reservas economicamente recuperáveis.r" é uma cópia do arquivo "simulação da produção de petróleo.r". 
+
+A diferença entre eles encontra-se na especificação do preço do petróleo. Enquanto no algoritmo principal o preço do petróleo é fixo, no cálculos das reservas recuperáveis o preço do petróleo varia de um valor inicial de US$ 150 por barril até o valor de US$ 40. Para cada valor dos preços do petróleo, é calculada a produção total (reservas economicamente recuperáveis) e a vida econômica das plataformas. 
+
+= TIR e VPL = 
+
+O arquivo "TIR e VPL.r" é outra variação do algoritmo principal. Assim como no arquivo "reservas economicamente recuperáveis", os preços do petróleo variam desde um limite superior, estabelecido em US$ 150 por barril, até um limite inferior, de US$ 20. Para cada nível dos preços do petróleo são calculados o VPL e a TIR. Se a TIR torna-se menor do que 8%, o loop de preços do petróleo é interrompido. 
+
+= ARQUIVOS DE GRÁFICOS = 
+
+Os arquivos "grafico arrecadacao.r", "grafico variaveis % pib.r" e "grafico capex e opex.r" geram apenas gráficos. Os gráficos são obtidos a partir dos dados gerados pelo arquivo "simulação da produção de petróleo.r". 
+
+A partir de um nível de preços do petróleo adotado no algoritmo principal, é gravado no diretório "c:/simulacao/" o arquivo "arrecadacao.txt", com os dados da arrecadação de tributos e de participações govenamentais para aquele preço do petróleo. Modificando-se o nome desse arquivo para, digamos, "arrecadacao ppet 40.txt", é possível carregar os dados e compará-los com a arrecadação para preços do petróleo em outro nível, através de "grafico arrecadacao.r". 
+
+Os gráficos de capex e opex e de variáveis como porcentagem do PIB são obtidos de maneira similar. 
+
