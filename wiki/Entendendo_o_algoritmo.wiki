@@ -1,15 +1,6 @@
-Entendendo e interpretando o algoritmo
+Entendendo o algoritmo
 
-O algoritmo principal é dividido nos seguintes blocos:
-
-1 - parâmetros utilizados nos cálculos, tais como o preço do petróleo, alíquotas de tributos etc;
-
-2 - produção de petróleo
-
-3 - custos 
-- financiamento
-- participação especial e tributos diretos
-- demanda
+São a seguir examinadas as partes mais complexas do algoritmo principal. 
 
 = PRODUÇÃO =
 
@@ -69,6 +60,4 @@ Uma vez determinada a participação especial, calcula-se a base de incidência 
 
 = DEMANDA POR PETRÓLEO = 
 
-O ajuste de uma curva de mínimos quadrados na relação entre PIB e consumo de petróleo é realizado através da função “lm”. Os coeficientes estimados são obtidos através das expressões "fit$coeficients", utilizados para traçar as curvas da reta de ajuste e de sua projeção. 
-
-O cálculo da demanda por petróleo é realizado tomando-se a projeção da relação entre PIB e consumo de petróleo ...
+O ajuste de uma curva de mínimos quadrados na relação entre PIB e consumo de petróleo é realizado através da função “lm”. Os coeficientes estimados são obtidos através das expressões "fit$coeficients", utilizados para traçar as curvas da reta de ajuste e de sua projeção. O cálculo da demanda por petróleo é realizado através do produto da projeção da relação entre PIB e consumo de petróleo e a projeção de crescimento do PIB. 
