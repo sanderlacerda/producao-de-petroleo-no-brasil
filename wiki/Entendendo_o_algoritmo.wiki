@@ -7,7 +7,9 @@ O algoritmo principal é dividido nos seguintes blocos:
 2 - produção de petróleo
 
 3 - custos 
-
+- financiamento
+- participação especial e tributos diretos
+- demanda
 
 = PRODUÇÃO =
 
@@ -67,12 +69,6 @@ Uma vez determinada a participação especial, calcula-se a base de incidência 
 
 = DEMANDA POR PETRÓLEO = 
 
-A série de consumo de petróleo no Brasil, obtida do Balanço Energético Nacional, é convertida de m3 para barris. O cálculo da razão entre o consumo de petróleo, em barris por ano, e o PIB real a preços de 2008. 
+O ajuste de uma curva de mínimos quadrados na relação entre PIB e consumo de petróleo é realizado através da função “lm”. Os coeficientes estimados são obtidos através das expressões "fit$coeficients", utilizados para traçar as curvas da reta de ajuste e de sua projeção. 
 
-O ajuste de uma curva de mínimos quadrados na relação entre PIB e consumo de petróleo através da função “fit”. A utilização dos coeficientes para a projeção da relação para o horizonte de produção do pré-sal:
-
-fit$coefficients
-
-A exportação de petróleo
-
-Imprimindo relatório com os parâmetros utilizados e com os resultados obtidos
+O cálculo da demanda por petróleo é realizado tomando-se a projeção da relação entre PIB e consumo de petróleo ...
