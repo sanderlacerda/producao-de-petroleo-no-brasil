@@ -37,7 +37,7 @@ O capital físico associado às unidades de produção colocadas em operação a
 
 Uma vez calculados a produção e os custos, são facilmente obtidos os gastos de investimento no mercado doméstico e as importações de equipamentos, a arrecadação de tributos indiretos incidentes tanto sobre os custos de desenvolvimento da produção quanto sobre os custos operacionais, os royalties e os gastos obrigatórios em pesquisa e desenvolvimento. O fluxo de caixa operacional é calculado, a cada ano, como a diferença entre o valor bruto da produção menos os custos de desenvolvimento da produção, custos operacionais, royalties e gastos obrigatórios em P&D. 
 
-= FINANCIAMENTO, PARTICIPAÇÃO ESPECIAL E FLUXO DE CAIXA FINANCEIRO = 
+= FINANCIAMENTO = 
 
 O financiamento é montado em três etapas. São estabelecidos, em primeiro lugar, os valores iniciais das variáveis:
 
@@ -51,32 +51,28 @@ Na segunda etapa, são calculados os valores dos desembolsos durante o período 
 
 Na terceira etapa são calculados, para cada período, os juros incidentes sobre o principal ("taxa_juros_terc*principal[i-1]"), a amortização do principal ("amort_princ[i]") e o valor do principal ("principal[i]"). Essas duas últimas variáveis dependem, naturalmente, do período de carência. As demais variáveis de financiamento resultam dessas primeiras: as prestações devidas pelo tomador do empréstimo ("prest[i]") são a soma de juros mais amortizações, a despesa financeira é igual aos juros e o saldo devedor é igual ao principal. 
 
+= PARTICIPAÇÃO ESPECIAL E TRIBUTOS DIRETOS =
+
+Assume-se que a incidência da participação especial inicia-se quando do início da produção da primeira plataforma colocada em operação no pré-sal. A partir de então, são calculados os valores de parâmetros ("par") e alíquotas nominais ("aliq") correspondentes aos volumes de produção do modelo a cada ano ("presal[i]") e aos seus respectivos períodos de produção (1o ano, 2o ano, 3o ano ou 4o ano em diante). Os dados de entrada com os volumes tributáveis e parâmetros de cálculo foram anteriormente carregados nas matrizes "volum" e "parametro". 
+
+O cálculo das alíquotas efetivas ("aliqefet") é em seguida realizado utilizando-se os valores de parâmetros e as alíquotas nominais calculadas anteriormente, além da produção anual de petróleo. 
+
+Finalmente, é calculada a participação especial ("part_esp[i]") devida a cada ano, juntamente com os tributos diretos (imposto de renda e contribuição social). A base de incidência da participação especial é definida como o fluxo de caixa operacional menos a depreciação. Se a base de incidência em um ano é negativa, a participação especial devida nesse ano é, naturalmente, igual a zero. O VALOR ACUMULADO do fluxo de caixa (menos a depreciação) será negativo nos primeiros anos do projeto e SOMENTE quando ele tornar-se positivo é que se iniciarão os pagamentos da participação especial. Isso reflete o princípio fundamental da participação especial: ela somente é paga quando (quase todos) os custos do projeto já foram recuperados e a geração de lucros está sendo iniciada. Na notação do algoritmo, o valor acumulado do fluxo de caixa menos depreciação é o "resultado de período anteriores para fins de cálculo da participação especial", ou "res_ex_ant_pe[i]". 
+
+Se a base de incidência da participação especial é positiva, mas "res_ex_ant_pe[i]" é negativo, não se paga participação especial, mas deduz-se de "res_ex_ant_pe[i]" o valor positivo da base de incidência. Ou seja, os valores positivos do fluxo de caixa reduzem progressivamente o valor negativo de "res_ex_ant_pe". 
+
+Se a base de incidência da participação especial é positiva e o valor negativo de "res_ex_ant_pe[i]" foi zerado, iniciam-se os pagamentos da participação especial, à alíquota efetiva anteriormente calculada. 
+
+Uma vez determinada a participação especial, calcula-se a base de incidência dos tributos diretos, ou seja, o "lucro antes dos tributos diretos" ("lucro_antes_td[i]"), definido como o fluxo de caixa operacional menos a participação especial, menos despesas financeiras, menos despesas administrativas e menos a depreciação. 
 
 
-A base de incidência da participação especial é o fluxo de caixa operacional menos a depreciação. 
 
-O financiamento
-prazo de carência e prazo de amortização. Durante o período de carência, os juros são cobrados. 
+Calculada a participação especial
 
-A participação especial
 
-O lucro antes dos tributos diretos. O cálculo da participação especial: o vetor com as alíquotas “aliq”,
 
-”aliqefet”: vetor com as alíquotas efetivas
 
-Para cada volume de produção (em “prodia”), é verificado o correspondente volume para fins de participação especial e encontrados os valores de “par” e “aliq”, para cada ano da produção. 
 
-A amortização das despesas dedutíveis
-
-Os tributos diretos, lucro e resultado de exercícios anteriores
-
-Participação do governo 
-
-Indicadores financeiros
-
-A taxa interna de retorno e o valor presente líquido
-
-A impressão do relatório. 
 
 A demanda por petróleo
 
