@@ -1,7 +1,5 @@
 Como baixar, instalar e aprender a usar o R
 
-WIKI EM CONSTRUÇÃO !
-
 = Baixando o software =
 
 O endereço para baixar o software é o seguinte:
@@ -10,7 +8,7 @@ http://www.vps.fmvz.usp.br/CRAN/
 
 = Aprendendo a linguagem = 
 
-A seguir são apresentados alguns elementos básicos do R e algumas referências de leitura. 
+A seguir são apresentados alguns elementos básicos do R e referências de leitura. 
 
 = Um loop = 
 
@@ -65,9 +63,6 @@ Ao ler:
 write.table(ano,file="c:/caminho do arquivo/nome do arquivo.txt")
 
 entenda: o conteúdo da variável _ano_ é gravada no arquivo "nome do arquivo.txt", localizado em "c:/caminho do arquivo/"
-
-
-
 
 = Referências =
 
