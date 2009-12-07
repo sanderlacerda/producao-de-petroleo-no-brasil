@@ -12,6 +12,16 @@ iii) pib_real.txt
 
 iv) produção das reservas provadas.txt
 
+v) participacao_especial_parametros.txt
+
+vi) participacao_especial_volumes.txt
+
+vii) participacao_especial_aliquotas.txt
+
+viii) cenario2.txt
+
+ix) platf_padrao1.txt
+
 Na pasta "c:/simulacao", guarde os seguintes arquivos (também disponíveis para baixar na seção "downloads"):
 
 i) simulação da produção de petróleo.r
