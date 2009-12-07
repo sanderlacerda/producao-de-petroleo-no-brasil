@@ -64,3 +64,7 @@ iv) "resultados.txt" é as matriz com a evolução das principais variáveis do 
 v) "arrecadação.txt" apresenta a evolução no tempo dos tributos e das participações governamentais; e
 
 vi) "relatorio.txt" é um conjunto de parâmetros e indicadores do modelo, tais como a produção total de petróleo, o pico de produção, o total das receitas dos governos e das operadoras etc. 
+
+= Rodando partes do código =
+
+Uma vez que o algoritmo tenha sido executado e as variáveis estejam na memória do R, é possível executar blocos do algoritmo. Para tanto, basta marcar o bloco que você quer executar e apertar ao mesmo tempo as teclas "Crtl + r". 
