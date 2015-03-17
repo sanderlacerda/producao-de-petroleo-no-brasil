@@ -1,0 +1,70 @@
+Inicio rápido: como rodar o algoritmo
+
+# Criando e populando o diretório "c:/simulacao" #
+
+O algoritmo vai buscar dados de entrada no diretório "c:/simulacao/input" e vai gravar resultados numéricos e gráficos no diretório "c:/simulacao/". A menos que você mude essas configurações, será necessário criar essas pastas em seu computador. Criada a pasta "c:/simulacao/input", guarde nela os seguintes arquivos de dados que você baixa da seção "downloads":
+
+i) pet\_cons\_m3.txt
+
+ii) pet\_prod\_m3.txt
+
+iii) pib\_real.txt
+
+iv) produção das reservas provadas.txt
+
+v) participacao\_especial\_parametros.txt
+
+vi) participacao\_especial\_volumes.txt
+
+vii) participacao\_especial\_aliquotas.txt
+
+viii) cenario2.txt
+
+ix) platf\_padrao1.txt
+
+Na pasta "c:/simulacao", guarde os seguintes arquivos (também disponíveis para baixar na seção "downloads"):
+
+i) simulação da produção de petróleo.r
+
+ii) reservas economicamente recuperaveis.r
+
+iii) TIR e VPL.r
+
+iv) grafico arrecadacao.r
+
+v) grafico capex e opex
+
+vi) grafico producao e exportacao versus pib.r
+
+Agora você tem todos os elementos para rodar o algoritmo principal, "simulação da produção de petróleo.r".
+
+# Rodando o algoritmo #
+
+Siga os seguintes passos:
+
+i) abra o R
+
+ii) clique em "Arquivo" e depois em "Abrir script..."
+
+iii) encontre e carregue "c:/simulacao/simulação da produção de petróleo.r"
+
+iv) clique em "Editar" e depois em "Executar tudo"
+
+O algoritmo então calcula, para os dados de entrada utilizados, as trajetórias das variáveis descritas no artigo. Vários gráficos aparecem na tela do R. Para vê-los, vá para "c:/simulacao/". A cada vez que o algoritmo é executado, os gráficos são gravados nesse diretório.
+Os resultados numéricos também são gravados no diretório "c:/simulacao/". Os seguintes arquivos contém os resultados numéricos:
+
+i) "ptempo.txt" é a matriz com a produção de todas as unidades ao longo do horizonte do pré-sal;
+
+ii) "presal.txt" é a produção anual, expressa em barris por dia, do pré-sal durante o horizonte de produção;
+
+iii) "proj\_demanda.txt" é a projeção da relação entre consumo de petróleo e PIB;
+
+iv) "resultados.txt" é as matriz com a evolução das principais variáveis do modelo ao longo do tempo, tais como a produção do pré-sal, a produção das atuais reservas provadas, capex, opex etc;
+
+v) "arrecadação.txt" apresenta a evolução no tempo dos tributos e das participações governamentais; e
+
+vi) "relatorio.txt" é um conjunto de parâmetros e indicadores do modelo, tais como a produção total de petróleo, o pico de produção, o total das receitas dos governos e das operadoras etc.
+
+# Rodando partes do código #
+
+Uma vez que o algoritmo tenha sido executado e as variáveis estejam na memória do R, é possível executar blocos do algoritmo. Para tanto, basta marcar o bloco que você quer executar e apertar ao mesmo tempo as teclas "Crtl + r".

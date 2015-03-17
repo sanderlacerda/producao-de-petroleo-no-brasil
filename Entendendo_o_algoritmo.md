@@ -1,0 +1,81 @@
+Entendendo o algoritmo
+
+São a seguir examinadas as partes mais complexas do algoritmo principal. As variações do algoritmo principal, utilizadas para calcular as reservas economicamente recuperáveis e parâmetros financeiros, são comentadas ao final, assim como os arquivos que geram gráficos.
+
+# PRODUÇÃO #
+
+O custo operacional de uma plataforma em cada ano ao longo de sua vida útil ("opex\_vida\_util") é igual ao seu custo operacional anual ("custo\_op\_anual") acrescido dos tributos indiretos incidentes sobre os custos operacionais ("trib\_ind\_op"). A expressão "seq(1,1,length.out=vida\_util\_platf)" significa uma sequência ("seq") de números que começa em "1", termina em "1" (ou seja, "1,1,1,...") e que tem tamanho ("lenth.out") igual ao número de anos da vida útil da plataforma ("vida\_util\_platf").
+
+O resultado operacional da plataforma ("resultado\_op\_platf") é calculado da seguinte maneira. A produção média diária de petróleo da plataforma padrão ("platf\_padrão") é multiplicada pelo número de dias do ano, do que resulta a produção anual da plataforma padrão. Essa produção, avaliada ao preço do petróleo utilizado no modelo ("ppet"), resulta na receita bruta. A receita bruta menos os pagamentos de royalties e de gastos obrigatórios em P&D resulta na receita líquida. O resultado operacional é a receita líquida menos o custo operacional da plataforma ("opex\_vida\_util").
+
+O horizonte econômico da plataforma (“horiz\_plat”) é o número de anos em que ela é capaz de operar com resultado operacional positivo ("resultado\_op\_platf">0).
+
+O horizonte do projeto (“horizonte”) é dado pelo numero de anos que leva para a primeira plataforma entrar em operação (quatro anos a partir de 2010), mais o numero de anos em que plataformas são adicionadas à produção ("dsplrows-1"), mais o horizonte de produção das plataformas("horiz\_plat").
+
+A produção da plataforma em cada ano de sua vida ECONÔMICA ("prod\_plat") é igual à produção da plataforma durante o seu horizonte econômico. Ou seja, se o horizonte econômico da plataforma ("horiz\_plat") for menor do que a sua vida útil, a plataforma é retira de operação, ainda que ela possa produzir durante mais algum tempo, pois a produção será muito baixa para gerar resultado operacional positivo.
+
+Encontram-se dentro do bloco da produção outros dois componentes do modelo: as datas entre o início e o fim da produção do pré-sal ("anos") e a projeção do PIB ("pib"). O PIB em dólares é igual ao valor do PIB em reais convertido à taxa de câmbio real-dólar. A projeção do PIB é realizada utilizando uma taxa de crescimento ("tx\_cs\_pib") suposta constante e igual a 3,5% ao ano.
+
+A produção do conjunto das plataformas colocadas em operação no pré-sal é montada através da expressão “ptempo”, a partir da produção de cada plataforma ("prod\_plat") e do número de plataformas que a cada ano entram em operação ("cenario"). Cada coluna de "ptempo" representa a produção da(s) plataforma(s) colocada(s) em operação em um determinado ano. Os anos anteriores à entrada das plataformas em operação, em cada coluna de "ptempo", são preenchidos com zeros ("seq(0,0,length.out=tempo\_construcao+i-1)") e, da mesma forma, os anos posteriores ao fim da vida econômica das plataformas são também preenchidos com zeros ("seq(0,0,length.out=dsplrows-i)"). A soma das linhas de “ptempo” resulta na produção do pré-sal ("prodia"), em barris por dia.
+
+# CUSTOS, DEPRECIAÇÃO e FLUXO DE CAIXA OPERACIONAL #
+
+A expressão "mdspl" está para os custos de desenvolvimento da produção assim como "ptempo" está para a produção. Ou seja, cada coluna de "mdspl" está associada a um ano e representa a evolução dos custos de desenvolvimento da produção ("custos\_desenv") da(s) plataforma(s) encomendada(s) naquele ano. A soma das linhas de "mdspl" resulta no “capex” anual.
+
+A mesma lógica governa a construção da matriz de custos operacionais ("opexmat”). A soma das linhas de “opexmat” resulta nos custos operacionais anuais (“opex”).
+
+A expressão "valorcont" representa o valor contábil dos equipamentos utilizados nas unidades de produção para fins de cáculo da depreciação dos equipamentos. Se a vida econômica das unidades de produção for menor do que o prazo legal de 20 anos para a depreciação total dos equipamentos, a variável "prazo" é ajustada. A depreciação é calculada anualmente sobre a porcentagem dos custos de desenvolvimento da produção que é associada a bens tangíveis.
+
+O capital físico associado às unidades de produção colocadas em operação a cada ano no pré-sal ("capital\_fis\_m") e a correspondente depreciação do capital físico ("depreciacao\_m"), é calculado a partir da evolução do valor contábil das unidades de produção e da quantidade de unidades de produção colocadas em operação a cada ano. A soma das linhas de "capital\_fis\_m" resulta na evolução anual do capital físico e a soma das linhas de "depreciacao\_m" resulta no valor contábil da depreciação anual dos equipamentos de produção.
+
+Uma vez calculados a produção e os custos, são facilmente obtidos os gastos de investimento no mercado doméstico e as importações de equipamentos, a arrecadação de tributos indiretos incidentes tanto sobre os custos de desenvolvimento da produção quanto sobre os custos operacionais, os royalties e os gastos obrigatórios em pesquisa e desenvolvimento. O fluxo de caixa operacional é calculado, a cada ano, como a diferença entre o valor bruto da produção menos os custos de desenvolvimento da produção, custos operacionais, royalties e gastos obrigatórios em P&D.
+
+# FINANCIAMENTO #
+
+O financiamento é montado em três etapas. São estabelecidos, em primeiro lugar, os valores iniciais das variáveis:
+
+i) o desembolso ("desemb") é igual à porcentagem de dívida na composição do capital do projeto vezes o primeiro valor do anual do fluxo de caixa operacional ("fc\_op");
+
+ii) o principal ("principal") é igual ao valor do desembolso inicial;
+
+iii) o saldo devedor ("saldo\_dev") também é igual ao valor do desembolso inicial.
+
+Na segunda etapa, são calculados os valores dos desembolsos durante o período de carência. Se, durante o período de carência, os preços do petróleo forem altos a ponto de tornar o fluxo de caixa operacional positivo, os desembolsos são interrompidos. Caso contrário, os desembolsos obedecem à regra inicial (a cada ano, os desembolsos são iguais à porcentagem da dívida na composição do capital do projeto vezes o valor do fluxo de caixa operacional).
+
+Na terceira etapa são calculados, para cada período, os juros incidentes sobre o principal ("taxa\_juros\_terc\*principal"), a amortização do principal ("amort\_princ") e o valor do principal ("principal"). Essas duas últimas variáveis dependem, naturalmente, do período de carência. As demais variáveis de financiamento resultam dessas primeiras: as prestações devidas pelo tomador do empréstimo ("prest") são a soma de juros mais amortizações, a despesa financeira é igual aos juros e o saldo devedor é igual ao principal.
+
+# PARTICIPAÇÃO ESPECIAL E TRIBUTOS DIRETOS #
+
+Assume-se que a incidência da participação especial inicia-se quando do início da produção da primeira plataforma colocada em operação no pré-sal. A partir de então, são calculados os valores de parâmetros ("par") e alíquotas nominais ("aliq") correspondentes aos volumes de produção do modelo a cada ano ("presal") e aos seus respectivos períodos de produção (1o ano, 2o ano, 3o ano ou 4o ano em diante). Os dados de entrada com os volumes tributáveis e parâmetros de cálculo foram anteriormente carregados nas matrizes "volum" e "parametro".
+
+O cálculo das alíquotas efetivas ("aliqefet") é em seguida realizado utilizando-se os valores de parâmetros e as alíquotas nominais calculadas anteriormente, além da produção anual de petróleo.
+
+Finalmente, é calculada a participação especial ("part\_esp") devida a cada ano, juntamente com os tributos diretos (imposto de renda e contribuição social). A base de incidência da participação especial é definida como o fluxo de caixa operacional menos a depreciação. Se a base de incidência em um ano é negativa, a participação especial devida nesse ano é, naturalmente, igual a zero. O VALOR ACUMULADO do fluxo de caixa (menos a depreciação) será negativo nos primeiros anos do projeto e SOMENTE quando ele tornar-se positivo é que se iniciarão os pagamentos da participação especial. Isso reflete o princípio fundamental da participação especial: ela somente é paga quando (quase todos) os custos do projeto já foram recuperados e a geração de lucros está sendo iniciada. Na notação do algoritmo, o valor acumulado do fluxo de caixa menos depreciação é o "resultado de período anteriores para fins de cálculo da participação especial", ou "res\_ex\_ant\_pe".
+
+Se a base de incidência da participação especial é positiva, mas "res\_ex\_ant\_pe" é negativo, não se paga participação especial, mas deduz-se de "res\_ex\_ant\_pe" o valor positivo da base de incidência. Ou seja, os valores positivos do fluxo de caixa reduzem progressivamente o valor negativo de "res\_ex\_ant\_pe".
+
+Se a base de incidência da participação especial é positiva e o valor negativo de "res\_ex\_ant\_pe" foi zerado, iniciam-se os pagamentos da participação especial, à alíquota efetiva anteriormente calculada.
+
+Uma vez determinada a participação especial, calcula-se a base de incidência dos tributos diretos, ou seja, o "lucro antes dos tributos diretos" ("lucro\_antes\_td"), definido como o fluxo de caixa operacional menos a participação especial, menos despesas financeiras, menos despesas administrativas e menos a depreciação. Se a base de incidência dos tributos diretos for positiva, eles são calculados utilizando-se as suas respectivas alíquotas.
+
+# DEMANDA POR PETRÓLEO #
+
+O ajuste de uma curva de mínimos quadrados na relação entre PIB e consumo de petróleo é realizado através da função “lm”. Os coeficientes estimados são obtidos através das expressões "fit$coeficients", utilizados para traçar as curvas da reta de ajuste e de sua projeção. O cálculo da demanda por petróleo é realizado através do produto da projeção da relação entre PIB e consumo de petróleo e a projeção de crescimento do PIB.
+
+# RESERVAS ECONOMICAMENTE RECUPERÁVEIS #
+
+O arquivo "reservas economicamente recuperaveis.r" é uma variação do algoritmo principal. Desde o "horizonte de produção de cada unidade" até o cálculo da TIR o arquivo "reservas economicamente recuperáveis.r" é uma cópia do arquivo "simulação da produção de petróleo.r".
+
+A diferença entre eles encontra-se na especificação do preço do petróleo. Enquanto no algoritmo principal o preço do petróleo é fixo, no cálculos das reservas recuperáveis o preço do petróleo varia de um valor inicial de US$ 150 por barril até o valor de US$ 40. Para cada valor dos preços do petróleo, é calculada a produção total (reservas economicamente recuperáveis) e a vida econômica das plataformas.
+
+# TIR e VPL #
+
+O arquivo "TIR e VPL.r" é outra variação do algoritmo principal. Assim como no arquivo "reservas economicamente recuperáveis", os preços do petróleo variam desde um limite superior, estabelecido em US$ 150 por barril, até um limite inferior, de US$ 20. Para cada nível dos preços do petróleo são calculados o VPL e a TIR. Se a TIR torna-se menor do que 8%, o loop de preços do petróleo é interrompido.
+
+# ARQUIVOS DE GRÁFICOS #
+
+Os arquivos "grafico arrecadacao.r", "grafico variaveis % pib.r" e "grafico capex e opex.r" geram apenas gráficos. Os gráficos são obtidos a partir dos dados gerados pelo arquivo "simulação da produção de petróleo.r".
+
+A partir de um nível de preços do petróleo adotado no algoritmo principal, é gravado no diretório "c:/simulacao/" o arquivo "arrecadacao.txt", com os dados da arrecadação de tributos e de participações govenamentais para aquele preço do petróleo. Modificando-se o nome desse arquivo para, digamos, "arrecadacao ppet 40.txt", é possível carregar os dados e compará-los com a arrecadação para preços do petróleo em outro nível, através de "grafico arrecadacao.r".
+
+Os gráficos de capex e opex e de variáveis como porcentagem do PIB são obtidos de maneira similar.
